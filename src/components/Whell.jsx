@@ -3,7 +3,7 @@ import './Whell.css';
 
 function Whell() {
   const [rotation, setRotation] = useState(0);
-  const [text, setText] = useState(["", "", "", "", "", ""]);
+  const [text, setText] = useState(["", "", "", "", "", "", "", "", "", ""]);
 
   const spin = () => {
     const number = Math.ceil(Math.random() * 10000);
@@ -20,12 +20,10 @@ function Whell() {
   return (
     <div className="App">
       <div className="container" style={{ transform: `rotate(${rotation}deg)` }}>
-        <div className="one" onClick={() => editText(0)}>{text[0]}</div>
-        <div className="two" onClick={() => editText(1)}>{text[1]}</div>
-        <div className="three" onClick={() => editText(2)}>{text[2]}</div>
-        <div className="four" onClick={() => editText(3)}>{text[3]}</div>
-        <div className="five" onClick={() => editText(4)}>{text[4]}</div>
-        <div className="six" onClick={() => editText(5)}>{text[5]}</div>
+        {text.map((part, index) =>{
+          return <div key={index+"spin"} style={{ backgroundColor: index %2 === 0? "#baf4ee": "#fff", transform: `rotate(${index !== 0 ? 360/text.length*index : 0}deg)` , borderColor: "red", borderWidth: "1px"}} ></div>
+        })}
+       
       </div>
       <span className="mid"></span>
       <button id="spin" onClick={spin}>Spin</button>
