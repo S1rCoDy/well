@@ -28,7 +28,7 @@ function Whell() {
         <div className="six" onClick={() => editText(5)}>{text[5]}</div>
       </div>
       <span className="mid"></span>
-      <button id="spin" onClick={spin}>Spin</button>
+      <button id="spin" onClick={spin}>Крутить</button>
       <div className="stoper"></div>
     </div>
   );
